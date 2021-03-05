@@ -7,6 +7,7 @@ var engine, world;
 var box1, pig1,pig3;
 var backgroundImg,platform;
 var bird, slingshot;
+var backgroundDefault;
 
 var gameState = "onSling";
 var bg = "sprites/bg1.png";
@@ -14,6 +15,7 @@ var score = 0;
 
 function preload() {
     getBackgroundImg();
+    backgroundDefault=loadImage("sprites/bg1.png")
 }
 
 function setup(){
@@ -49,7 +51,8 @@ function setup(){
 function draw(){
     if(backgroundImg)
         background(backgroundImg);
-    
+    else
+    background(backgroundDefault);
         noStroke();
         textSize(35)
         fill("white")
